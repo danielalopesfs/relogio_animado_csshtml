@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #FFCB9A;
+}
+
+.relogio {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #D2E8E3;
+    background-image: url(img/numeros-do-relogio-png-Alta-qualidade.png);
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    border: 15px solid #0F6466;
+    border-radius: 50%;
+    box-shadow: -5px 5px 0 #2C3532, inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.relogio::before {
+    content: '';
+    position: absolute;
+    background-color: #2C3532;
+    width: 25%;
+    height: 6px;
+    top: calc(50% - 3px);
+    left: 50%;
+    border-radius: 3px;
+    animation: animate 4s linear infinite;
+    transform-origin: left;
+}
+
+.relogio::after {
+    content: '';
+    position: absolute;
+    background-color: #2C3532;
+    width: 40%;
+    height: 6px;
+    top: calc(50% - 3px);
+    left: 50%;
+    border-radius: 3px;
+    animation: animate 48s linear infinite;
+    transform-origin: left;
+}
+
+span {
+    display: block;
+    position: absolute;
+    background-color: #0F6466;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }   
+}
